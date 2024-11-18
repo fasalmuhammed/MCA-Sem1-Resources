@@ -1,0 +1,39 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+class book{
+	private:
+		string title;
+		string auther;
+	public:
+		book(string t, string n){
+			title=t;
+			auther=n;
+			cout<<"\nBook "<<title <<" By "<<auther<<" is created.";
+		}
+		~book(){
+			cout<<"\nBook "<<title<<" By "<<auther<<" is destroyed";
+		}
+		void display(){
+			cout<<"\ntitle: "<<title<<"    Auther: "<<auther;
+		}
+};
+
+int main(){
+	string title , auther;
+	char ch;
+	do{
+		cout<<"\nEnter the name of the book :";
+	getline(cin,title);
+	cout<<"\nEnter the name of the auther :";
+	getline(cin,auther);
+	book b1(title, auther);
+	b1.display();
+	cout<<"\n\nDo you wanna continue ?(y/n)";
+	cin>>ch;
+	}while(ch=='y'||ch=='Y');
+	return 0;
+}
+
+
