@@ -1,0 +1,45 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+class Student {
+private:
+    string name;
+
+public:
+    // Constructor
+    Student(const string& n) : name(n) {}
+
+    // Display method
+    void display() const {
+        cout << name << endl;
+    }
+};
+
+int main() {
+    int numStudents;
+    cout << "Enter the number of students: ";
+    cin >> numStudents;
+
+    // Clear the input buffer
+    cin.ignore();
+
+    vector<Student> students; // Declare a vector to store students
+
+    // Input student names
+    for (int i = 0; i < numStudents; i++) {
+        string name;
+        cout << "Enter the name of student " << i + 1 << ": ";
+        getline(cin, name); // Use getline to read full names with spaces
+        students.push_back(Student(name)); // Add each student to the vector
+    }
+
+    // Display student names
+    cout << "\nStudent names are:" << endl;
+    for (int i = 0; i < numStudents; i++) {
+        students[i].display();
+    }
+
+    return 0;
+}
