@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Calculator {
+public:
+    // Integer addition
+    int add(int a, int b) const {
+        return a + b;
+    }
+
+    // Floating-point addition
+    float add(float a, float b) const {
+        return a + b;
+    }
+
+    // String concatenation
+    string add(const string& value1, const string& value2) const {
+        return value1 + value2;
+    }
+};
+
+int main() {
+    Calculator cal1;
+
+    // Integer addition
+    int intResult = cal1.add(5, 10);
+    cout << "Integer addition (5 + 10) = " << intResult << endl;
+
+    // Floating-point addition
+    float floatResult = cal1.add(5.5f, 1.5f); // Use 'f' for float literals
+    cout << "\nFloating-point addition (5.5 + 1.5) = " << floatResult << endl;
+
+    // String concatenation
+    string strResult = cal1.add("Hello, ", "World!");
+    cout << "\nString concatenation (\"Hello, \" + \"World!\") = " << strResult << endl;
+
+    return 0;
+}
