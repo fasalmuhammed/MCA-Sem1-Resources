@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+
+class person{
+	private:
+		int age;
+		string name;
+	public:
+		person(const string&name, int age):name(name), age(age){}
+		
+		void display(){
+			cout<<"Name : "<<name;
+			cout<<"\nAge : "<<age;
+		}
+};
+
+int main(){
+	int age;
+	string name;
+	cout<<"Enter the Name of the person : ";
+	getline(cin,name);
+	cout<<"Enter the age : ";
+	cin>>age;
+	person p1(name,age);
+	p1.display();
+	return 0;
+}
